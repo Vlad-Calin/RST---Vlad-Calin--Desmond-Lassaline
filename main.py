@@ -35,7 +35,7 @@ HaveLadder = False
 
 # Function to get room description and print it with colors
 def getRoomDescription():
-  print('\033[32m\033[3m')
+  print('\033[32m\033[3m') #This line sets the color of the code to a certain color
   global beenInR1
   global beenInR2
   global beenInUpstairs_room
@@ -96,7 +96,7 @@ def getRoomDescription():
         gameLoop()
       else:
         print("This is the hallway from upstairs. There is only one room here. There is a door in front of you and one going backwards.")
-        beenInUpstairs_hallway = True 
+        beenInUpstairs_hallway = True #This line sets the value of the variable to true in order for the conditional statement to take another turn when comming back in this room
         gameLoop()
     elif (beenInUpstairs_hallway == True) and (beenInUpstairs_room == False):
       if flashlight == 'off':
@@ -261,7 +261,7 @@ def turnAction(act):
   global room
   global have_ladder, have_cross, have_crowbar, have_toaster, have_jello
 
-  #ROOM #1
+  # Turn Action - ROOM #1
   if room == 'r1':
     if act in commands:
       if act == 'help':
@@ -277,8 +277,6 @@ def turnAction(act):
         inventoryV = inventoryV + ['ladder']
         print('ladder added to inventory')
         have_ladder = True
-      else:
-        print("You already have a ladder!")
       if act == 'light':
         print("This is a battery powered light, it is too high for you to reach")
       if act == 'ceiling':
@@ -298,7 +296,7 @@ def turnAction(act):
       gameLoop()
 
 
-  #ROOM #2
+  #Turn Action - ROOM #2
   if room == 'r2':
     if act in commands:
       if act == 'help':
@@ -334,7 +332,7 @@ def turnAction(act):
       gameLoop() 
 
 
-  #UPSTAIRS HALLWAY
+  #Turn Action - UPSTAIRS HALLWAY
   if room == 'upstairs_hallway':
     if act in commands:
       if act == 'help':
@@ -356,7 +354,7 @@ def turnAction(act):
       gameLoop()
 
 
-  #UPSTAIRS ROOM
+  #Turn Action - UPSTAIRS ROOM
   if room == 'upstairs_room':
     if act in commands:
       if act == 'help':
@@ -392,7 +390,7 @@ def turnAction(act):
       print('Sorry, wrong room.')
       gameLoop()
 
-  #BASEMENT
+  #Turn Action - BASEMENT
   if room == 'basement':
     if act in commands:
       if act == 'help':
